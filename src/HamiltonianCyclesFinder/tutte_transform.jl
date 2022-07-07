@@ -4,7 +4,9 @@ decodex(node::Int64, deg::Int64) = div(node - 1, 2 * deg - 2) + 1
 
 occupied_generator(graph::SimpleGraph, deg::Int64) = Dict(node => Dict(neigh=>false for neigh in get_index_map(node, deg)) for node in vertices(graph))
 
-get_unoccupied(occupied::Dict{Int64, Dict{Int64, Bool}}, node) = map(x->x[1], filter(x->!(x[2]), occupied[node]))[1]
+get_vec(dic::Dict{Int64, Bool}) = map(x->Tuple(x), collect(dic))
+
+get_unoccupied(occupied::Dict{Int64, Dict{Int64, Bool}}, node) = map(x->x[1], filter(x->!(x[2]), get_vec(occupied[node])))[1]
 
 get_index_map(node::Int64, deg::Int64) = collect(nodedex(node, deg):(nodedex(node, deg) + deg - 1))
 
