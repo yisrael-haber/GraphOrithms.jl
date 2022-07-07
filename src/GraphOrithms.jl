@@ -1,13 +1,13 @@
 module GraphOrithms
 
 using Graphs
-using PyCall
+@everywhere using PyCall
 using Random
 
 # const nx = PyNull()
 
 function __init__()
-    nx = pyimport_conda("networkx", "networkx")
+    @everywhere nx = pyimport_conda("networkx", "networkx")
 end
 
 export is_hamiltonian, find_hamiltonian_cycle, tutte_transform, decode_transform, nx_matching, nx_random_matching
