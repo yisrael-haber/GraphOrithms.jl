@@ -2,6 +2,7 @@ module GraphOrithms
 
 using Graphs
 using PyCall
+using Random
 
 # const nx = PyNull()
 
