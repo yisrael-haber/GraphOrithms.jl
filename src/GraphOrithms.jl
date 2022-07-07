@@ -1,11 +1,18 @@
 module GraphOrithms
 
 using Graphs
+using PyCall
 
-greet() = print("Hello World!")
+# const nx = PyNull()
 
-export greet, this_is_func
+function __init__()
+    nx = pyimport_conda("networkx", "networkx")
+end
 
-include("HamiltonianCyclesFinder/tryThis.jl")
+export is_hamiltonian, find_hamiltonian_cycle, tutte_transform, decode_transform, nx_matching, nx_random_matching
+
+include("HamiltonianCyclesFinder/hamiltonian.jl")
+include("HamiltonianCyclesFinder/tutte_transform.jl")
+include("HamiltonianCyclesFinder/weightless_matching.jl")
 
 end # module
