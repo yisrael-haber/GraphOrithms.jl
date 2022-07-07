@@ -1,4 +1,4 @@
-# nx = pyimport("networkx")
+nx = pyimport("networkx")
 
 function createNX(origGraph::AbstractGraph)
 	G = nx.Graph()
