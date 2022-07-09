@@ -8,7 +8,7 @@ using Random
 const nx = PyNULL()
 
 function __init__()
-    @everywhere nx = pyimport_conda("networkx", "networkx")
+    @everywhere nx = pyimport("networkx", "networkx")
 end
 
 export is_hamiltonian, find_hamiltonian_cycle, tutte_transform, decode_transform, nx_matching, nx_random_matching
