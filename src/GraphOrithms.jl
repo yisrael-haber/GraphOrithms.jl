@@ -1,14 +1,15 @@
 module GraphOrithms
 
+using Distributed
 using Graphs
-# @everywhere using PyCall
+@everywhere using PyCall
 using Random
 
-# const nx = PyNull()
+const nx = PyNull()
 
-# function __init__()
-#     @everywhere nx = pyimport_conda("networkx", "networkx")
-# end
+function __init__()
+    @everywhere nx = pyimport_conda("networkx", "networkx")
+end
 
 export is_hamiltonian, find_hamiltonian_cycle, tutte_transform, decode_transform, nx_matching, nx_random_matching
 

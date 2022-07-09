@@ -1,6 +1,3 @@
-using PyCall 
-nx = pyimport("networkx")
-
 function createNX(origGraph::AbstractGraph)
 	G = nx.Graph()
 	G.add_edges_from(map(x->(src(x), dst(x)), edges(origGraph)))
