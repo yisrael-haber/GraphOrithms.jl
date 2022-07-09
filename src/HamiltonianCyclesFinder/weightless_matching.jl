@@ -1,3 +1,4 @@
+using PyCall 
 nx = pyimport("networkx")
 
 function createNX(origGraph::AbstractGraph)
