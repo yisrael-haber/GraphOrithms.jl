@@ -5,7 +5,7 @@ using Graphs
 @everywhere using PyCall
 using Random
 
-const nx = PyNull()
+#const nx = PyNull()
 
 function __init__()
     @everywhere nx = pyimport_conda("networkx", "networkx")
